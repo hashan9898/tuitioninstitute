@@ -1,0 +1,15 @@
+.blinker{
+  animation: blinker 1.5s linear infinite;
+}
+@keyframes blinker {
+  50% {
+  opacity: 0;
+  }
+}
+.description-title{
+  padding:9%;
+  text-align: center;
+}
+.video-row{
+  margin-bottom: 80px;
+}

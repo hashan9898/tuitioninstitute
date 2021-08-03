@@ -1,0 +1,44 @@
+<mat-toolbar color="primary">
+  <div class="container">
+  <span>Institute Dashboard</span>
+  <button class="btn btn2" (click)="logout()"><i class="fa fa-sign-out"></i> Logout</button>
+</div>
+</mat-toolbar>
+<div class="container">
+  <ng-container>
+    <div class="row">
+      <div class="col my-4">
+        <table class="table">
+          <thead class="table-dark">
+            <tr>
+              <th class="text-center">Image</th>
+              <th>Teacher Name</th>
+              <th>Price</th>
+              <th>Month</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let course of courses">
+              <td class="d-flex align-items-center justify-content-around">
+                <img src="./assets/img/lesson-Image.png" height="60" class="order-1">
+              </td>
+              <td>
+                <p class="lesson-details">{{teacherMap.get(course.teacherId)?.name}}</p>
+              </td>
+              <td>
+                <p class="lesson-details">Rs.&nbsp;{{course.price}}.00</p>
+              </td>
+              <td>
+                <p class="lesson-details">{{course.month}}</p>
+              </td>
+              <td>
+                <span class="text-danger" style="cursor: pointer;"><i class="fa fa-trash" (click)="deletee(course._id)"></i></span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </ng-container>
+</div>

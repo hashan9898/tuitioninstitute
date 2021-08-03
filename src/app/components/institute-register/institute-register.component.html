@@ -1,0 +1,19 @@
+<div class="container">
+<div [formGroup]="formGroup">
+    <h1 class="title">Institute Register</h1>
+    <mat-form-field class="full-width" appearance="fill">
+      <input matInput placeholder="please enter username" formControlName="email" required minlength="4" maxlength="20">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width" appearance="fill">
+      <input matInput placeholder="Enter your password" formControlName="password" required
+      [type]="hide ? 'password' : 'text'">
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+      [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+      </mat-form-field>
+      <br>
+      <button class="btn btn-primary" (click)="register()" [disabled]="!formGroup.valid">Institute Register</button>
+      </div>
+      </div>

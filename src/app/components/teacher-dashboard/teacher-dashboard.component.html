@@ -1,0 +1,84 @@
+<mat-toolbar color="primary">
+  <div class="container">
+  <span>Teacher Dashboard</span>
+  <button class="btn btn2" (click)="logout()"><i class="fa fa-sign-out"></i> Logout</button>
+  <button class="btn btn1" (click)="goToAccount()"><i class="fa fa-user"></i> My Account</button>
+</div>
+</mat-toolbar>
+<div class="background">
+  <div class="container">
+    <div class="row">
+<div class="col-md-2">
+</div>
+<div class="col-md-8">
+  <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Lesson Successfully Uploaded.</strong> Now you can uplaod another lesson.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="closeAlert()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div [formGroup]="formGroup">
+<div class="example-container1">
+      <h3 class="title">Lesson Upload Section</h3>
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Lesson Name" formControlName="lessonname" required>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="full-width">
+              <mat-select placeholder="Select Year" formControlName="year" required>
+                <mat-option *ngFor="let value of year" [value]="value">
+                  {{ value }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+              <mat-select placeholder=" Select Type" formControlName="type" required>
+                <mat-option *ngFor="let value of type" [value]="value">
+                  {{ value }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+              <mat-select placeholder=" Select Month" formControlName="month" required>
+                <mat-option *ngFor="let value of months" [value]="value">
+                  {{ value }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+              <mat-select placeholder=" Select Week" formControlName="week" required>
+                <mat-option *ngFor="let value of week" [value]="value">
+                  {{ value }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="full-width">
+              <mat-label>Amount</mat-label>
+              <input matInput formControlName="price" required>
+              <span matPrefix>Rs.&nbsp;&nbsp;</span>
+              <span matSuffix>.00</span>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="full-width">
+              <mat-label>Video</mat-label>
+            <ngx-mat-file-input formControlName="filepath"></ngx-mat-file-input>
+          <mat-icon matSuffix>folder</mat-icon>
+        </mat-form-field>
+            <br>
+            <mat-form-field class="full-width">
+              <mat-label>Description</mat-label>
+              <textarea matInput formControlName="description"></textarea>
+            </mat-form-field>
+            <br>
+            <div class="row">
+              <button class="profile-edit-btn" (click)="upload()">Upload Lesson</button>
+            </div>
+          </div>
+  </div>
+</div>
+<div class="col-md-2">
+</div>
+</div>
+</div>
+</div>

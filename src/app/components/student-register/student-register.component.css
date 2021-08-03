@@ -1,0 +1,68 @@
+.background{
+  background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+}
+.container {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.example-container1 {
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  padding: 30px 10px 30px 10px;
+  background: #eee;
+  border-radius: 20px 20px 20px 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+}
+.full-width{
+  width: 80%;
+}
+.title{
+  padding-bottom: 30px;
+}
+button {
+  font-size: 22px;
+  border-radius: 10px;
+}
+.button1{
+  width: 80%;
+  text-align:center;
+  background-color: #e2a500;
+  color: white;
+  padding:16px 32px;
+}
+.button1:hover{
+  background-color: transparent;
+  border: 4px solid #e2a500;
+  color: #e2a500;
+}
+.button2 {
+  background-color: #4CAF50;
+  color: white;
+  padding:16px 64px;
+}
+.button2:hover {
+  background-color: transparent;
+  border: 4px solid #4CAF50;
+  color: #4CAF50;
+}
+.error-msg{
+  color:red;
+  font-family: "Roboto",sans-serif;
+  margin-top: -20px;
+}
+.name{
+  margin-left: -48%;
+}
+.email{
+  margin-left: -49%;
+}
+.password{
+  margin-left: -1%;
+}
+.phone{
+  margin-left: -47%;
+}

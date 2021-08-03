@@ -1,0 +1,68 @@
+<div class="background">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2">
+      </div>
+      <div class="col-md-8">
+        <div [formGroup]="formGroup">.
+          <div class="example-container1">
+            <h1 class="title">Student Register</h1>
+            <mat-form-field class="full-width" appearance="fill">
+              <input matInput placeholder="Enter your name" formControlName="name" required minlength="4" maxlength="20">
+            </mat-form-field>
+            <span class="error-msg name" *ngIf="name.invalid && name.touched">Name must contain 4-20 letters</span>
+            <br>
+            <mat-form-field class="full-width" appearance="fill">
+              <input matInput placeholder="Enter your email" formControlName="email" required>
+            </mat-form-field>
+            <span class="error-msg email" *ngIf="email.invalid && email.touched">Email must contain '@'symbol </span>
+            <br>
+            <mat-form-field class="full-width" appearance="fill">
+              <input matInput placeholder="Enter your password" formControlName="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+              [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+              </mat-form-field>
+              <span class="error-msg password" *ngIf="password.invalid && password.touched">Password must contain lowercase, uppercase, number and minimum 8 characters</span>
+            <br>
+            <mat-form-field class="full-width" appearance="fill">
+              <input matInput placeholder="Confirm your password" formControlName="cpassword" required
+                [type]="chide ? 'password' : 'text'">
+              <button mat-icon-button matSuffix (click)="chide = !chide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="chide">
+                <mat-icon>{{chide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="full-width" appearance="fill">
+              <input matInput placeholder="Enter your mobile number" formControlName="mobileNumber" pattern="[0-9]{10}">
+            </mat-form-field>
+            <span class="error-msg phone" *ngIf="phone.invalid && phone.touched">Phone must contain 10 numbers</span>
+            <br>
+            <mat-form-field class="full-width" appearance="fill">
+              <mat-select placeholder="Select your subject" formControlName="subject" required>
+                <mat-option *ngFor="let value of subjects" [value]="value">{{ value }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <br>
+            <button class="button button1" (click)="register()" [disabled]="!formGroup.valid">Register</button>
+            <br>
+            <small>{{ errorMsg }}</small>
+            <div class="row my-3">
+              <div class="col-md-8">
+                <h5 class="sub-title py-4">Already have an account?</h5>
+              </div>
+              <div class="col-md-4">
+                <button class="button button2" routerLink="/login">Login</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

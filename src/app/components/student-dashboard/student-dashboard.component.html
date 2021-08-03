@@ -1,0 +1,45 @@
+<mat-toolbar color="primary">
+  <div class="container">
+  <span>Student Dashboard</span>
+  <button class="btn btn2" (click)="logout()"><i class="fa fa-sign-out"></i> Logout</button>
+  <button class="btn btn1" (click)="goToAccount()"><i class="fa fa-user"></i> My Account</button>
+</div>
+</mat-toolbar>
+  <div class="container">
+    <div class="section">
+<!-- /section title -->
+    <!-- product -->
+    <div class="row">
+      <div class="col-md-4 col-sm-6"  *ngFor="let course of courses|sort:['price']">
+        <div class="product">
+          <div class="product-img">
+            <img src="./assets/img/lesson-Image.png" alt="" style="cursor: pointer">
+            <div class="product-label">
+              <span class="new">NEW</span>
+            </div>
+          </div>
+          <div class="product-body">
+            <div class="card-header">
+              <p class="product-category">{{teacherMap.get(course.teacherId)?.subject}}</p>
+              <p class="product-category">{{course.year}}&nbsp;{{course.type}}</p>
+              <p class="product-category">{{teacherMap.get(course.teacherId)?.name}}</p>
+              <h3 class="product-name"><a href="#">{{course.lessonname}}</a></h3>
+              <h4 class="product-price">{{course.price}}</h4>
+              <div class="product-btns">
+                <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to
+                    wishlist</span></button>
+              </div>
+            </div>
+          </div>
+          <div class="add-to-cart">
+            <button class="add-to-cart-btn" routerLink="/cart"><i class="fa fa-book"></i>Enroll Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /product -->
+  </div>
+  <!-- container -->
+</div>
+<!-- SECTION -->
+

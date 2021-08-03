@@ -1,0 +1,70 @@
+<div class="background">
+<div class="container">
+    <div class="row">
+      <div class="col-md-2">
+      </div>
+      <div class="col-md-8">
+        <div [formGroup]="formGroup">
+          <div class="example-container1">
+            <h1 class="title">Teacher Register</h1>
+            <mat-form-field class="full-width" appearance="fill">
+              <mat-label>Enter your name</mat-label>
+              <input matInput formControlName="name" required>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="full-width" appearance="fill">
+              <input matInput placeholder="Enter your email" formControlName="email" required>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="full-width" appearance="fill">
+              <input matInput placeholder="Enter your password" formControlName="password" required
+                [type]="hide ? 'password' : 'text'">
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="full-width" appearance="fill">
+              <input matInput placeholder="Confirm your password" formControlName="cpassword" required
+                [type]="chide ? 'password' : 'text'">
+              <button mat-icon-button matSuffix (click)="chide = !chide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="chide">
+                <mat-icon>{{chide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="full-width" appearance="fill">
+              <input matInput placeholder="Enter your mobile number" formControlName="mobileNumber">
+            </mat-form-field>
+            <br>
+            <mat-form-field class="full-width" appearance="fill">
+              <input matInput placeholder="Enter subject" formControlName="subject">
+            </mat-form-field>
+            <br>
+            <mat-form-field class="full-width" appearance="fill">
+              <mat-label>Select Medium</mat-label>
+              <mat-select formControlName="medium" multiple>
+                <mat-option *ngFor="let value of medium" [value]="value">{{value}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <br>
+            <mat-checkbox formControlName="agrement"><a href="#">Accept terms and conditions</a></mat-checkbox>
+            <br>
+            <button class="button button1" (click)="register()" [disabled]="!formGroup.valid">Register</button>
+            <div class="row my-3">
+              <div class="col-md-9">
+                <h5 class="sub-title py-4">Already have an account?</h5>
+              </div>
+              <div class="col-md-3">
+                <button class="button button2" routerLink="/login">Login</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="col-md-2">
+        </div>
+    </div>
+  </div>
+</div>

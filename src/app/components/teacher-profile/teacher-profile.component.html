@@ -1,0 +1,126 @@
+<div class="cover">
+  <div class="background">
+    <div class="container emp-profile">
+      <form method="post">
+        <div [formGroup]="formGroup">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="profile-img">
+                <img [src]="imageUrl" alt="" />
+                <div class="file btn btn-lg btn-primary">
+                  Change Photo
+                  <input type="file" #Image accept="image/*" (change)="handleFileInput($event.target.files)"
+                    formControlName="image">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="profile-head">
+                <h5>
+                  {{teacher?.name}}
+                </h5>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                      aria-controls="home" aria-selected="true">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                      aria-controls="profile" aria-selected="false">Uploads</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-2">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-8">
+              <div class="tab-content profile-tab" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>Teacher Name</label>
+                    </div>
+                    <div class="col-md-6">
+                      <mat-form-field class="full-width">
+                        <input matInput formControlName="name">
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>Email</label>
+                    </div>
+                    <div class="col-md-6">
+                      <mat-form-field class="full-width">
+                        <input matInput formControlName="email">
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>Mobile Number</label>
+                    </div>
+                    <div class="col-md-6">
+                      <mat-form-field class="full-width">
+                        <input matInput formControlName="phone">
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>Old Password</label>
+                    </div>
+                    <div class="col-md-6">
+                      <mat-form-field class="full-width">
+                        <input matInput placeholder="old password" formControlName="oldpassword">
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>New Password</label>
+                    </div>
+                    <div class="col-md-6">
+                      <mat-form-field class="full-width">
+                        <input matInput placeholder="new password" formControlName="newpassword">
+                      </mat-form-field>
+                      <br>
+                    </div>
+                    <br>
+                    <br>
+                    <button [disabled]="!formGroup.valid" class="profile-edit-btn" name="btnAddMore" data-toggle="modal"
+                      data-target="#exampleModal">Update</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirm Changers</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to change the data?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="update()" data-dismiss="modal">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

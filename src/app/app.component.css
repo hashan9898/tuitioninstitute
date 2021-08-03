@@ -1,0 +1,14 @@
+tr.even {
+    background: black;
+    color: white;
+}
+
+tr.odd {
+    background: red;
+    color: white;
+}
+.img-fluid {
+  max-width: 10% !important;
+  margin-right: 17% !important;
+}
+

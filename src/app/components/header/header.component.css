@@ -1,0 +1,15 @@
+a{
+  color:white;
+  text-align: center;
+  font-family: "Montserrat";
+}
+ul.header-links.pull-left {
+  margin-top: 5px;
+}
+.login-top-header{
+  margin-top: 13px;
+}
+cart-product-name{
+  font-weight: 700;
+  color:#333;
+}

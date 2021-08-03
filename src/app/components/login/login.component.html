@@ -1,0 +1,59 @@
+<div class="background">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+      </div>
+      <div class="col-md-6">
+        <div [formGroup]="formGroup">
+          <div class="example-container1">
+            <h1 class="title">Login</h1>
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Enter your email" formControlName="email" required>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Enter your password" formControlName="password" required
+              [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>            </mat-form-field>
+          </div>
+          <div class="example-container2">
+            <div class="row my-3">
+              <div class="col-md-6">
+                <button class="button button2" (click)="studentlogin()" [disabled]="!formGroup.valid">Student
+                  Login</button>
+              </div>
+              <div class="col-md-6">
+                <button class="button button1" (click)="teacherlogin()" [disabled]="!formGroup.valid">Teacher
+                  Login</button>
+              </div>
+            </div>
+            <div class="row my-3">
+              <div class="col">
+                <button class="button instute-login" (click)="institutelogin()" [disabled]="!formGroup.valid">Institute
+                  Login</button>
+              </div>
+            </div>
+            <div class="row my-3">
+              <div class="col">
+                <h4 class="sub-title">Haven't account yet?</h4>
+              </div>
+            </div>
+            <div class="row my-3">
+              <div class="col-md-6">
+                <button class="button button4" routerLink="/student-register">Student Register</button>
+              </div>
+              <div class="col-md-6">
+                <button class="button button3" routerLink="/teacher-register">Teacher Register</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+      </div>
+    </div>
+  </div>
+</div>
